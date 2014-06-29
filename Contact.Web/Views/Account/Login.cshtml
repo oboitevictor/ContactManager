@@ -1,0 +1,24 @@
+﻿@model Contact.Web.Models.UserViewModel
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+    <p>
+        @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", placeholder = "Enter Username" })
+        @Html.ValidationMessageFor(m => m.UserName)
+    </p>
+    <p>
+        @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Enter Password" })
+    @Html.ValidationMessageFor(m => m.UserName)
+    </p>
+    <p>
+        @Html.CheckBoxFor(m => m.RememberMe) <span>Remember Me</span>
+    </p>
+    <button class="btn btn-default">Login</button>
+}
+
