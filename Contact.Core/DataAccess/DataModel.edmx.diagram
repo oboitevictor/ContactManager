@@ -17,12 +17,15 @@
         <AssociationConnector Association="DataModel.FK_RolePermissions_Role" />
         <AssociationConnector Association="DataModel.FK_UserRole_Role" />
         <AssociationConnector Association="DataModel.FK_UserRole_User" />
+<<<<<<< HEAD
         <EntityTypeShape EntityType="DataModel.Department" Width="2.25" PointX="5.375" PointY="6.25" />
         <AssociationConnector Association="DataModel.FK_Employee_User1" />
         <EntityTypeShape EntityType="DataModel.Branch" Width="1.5" PointX="8.375" PointY="0.75" />
         <EntityTypeShape EntityType="DataModel.Customers1" Width="1.5" PointX="8.375" PointY="3.75" />
         <AssociationConnector Association="DataModel.FK_Employees_Branch" />
         <AssociationConnector Association="DataModel.FK_Employees_Employees" />
+=======
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

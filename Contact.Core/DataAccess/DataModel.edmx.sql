@@ -2,8 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
+<<<<<<< HEAD
 -- Date Created: 03/19/2015 08:44:34
 -- Generated from EDMX file: C:\Users\Appzone\Documents\Visual Studio 2013\Projects\Contact\Contact.Core\DataAccess\DataModel.edmx
+=======
+-- Date Created: 06/19/2014 11:18:31
+-- Generated from EDMX file: G:\Contact\Contact.Core\DataAccess\DataModel.edmx
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -18,7 +23,11 @@ GO
 -- --------------------------------------------------
 
 IF OBJECT_ID(N'[dbo].[FK_Employee_User]', 'F') IS NOT NULL
+<<<<<<< HEAD
     ALTER TABLE [dbo].[Employees] DROP CONSTRAINT [FK_Employee_User];
+=======
+    ALTER TABLE [dbo].[Employee] DROP CONSTRAINT [FK_Employee_User];
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
 GO
 IF OBJECT_ID(N'[dbo].[FK_RolePermissions_Permission]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[RolePermissions] DROP CONSTRAINT [FK_RolePermissions_Permission];
@@ -27,6 +36,7 @@ IF OBJECT_ID(N'[dbo].[FK_RolePermissions_Role]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[RolePermissions] DROP CONSTRAINT [FK_RolePermissions_Role];
 GO
 IF OBJECT_ID(N'[dbo].[FK_UserRole_Role]', 'F') IS NOT NULL
+<<<<<<< HEAD
     ALTER TABLE [dbo].[UserRoles] DROP CONSTRAINT [FK_UserRole_Role];
 GO
 IF OBJECT_ID(N'[dbo].[FK_UserRole_User]', 'F') IS NOT NULL
@@ -34,12 +44,19 @@ IF OBJECT_ID(N'[dbo].[FK_UserRole_User]', 'F') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[FK_Employee_User1]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Employees] DROP CONSTRAINT [FK_Employee_User1];
+=======
+    ALTER TABLE [dbo].[UserRole] DROP CONSTRAINT [FK_UserRole_Role];
+GO
+IF OBJECT_ID(N'[dbo].[FK_UserRole_User]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[UserRole] DROP CONSTRAINT [FK_UserRole_User];
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
 GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+<<<<<<< HEAD
 IF OBJECT_ID(N'[dbo].[Contacts]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Contacts];
 GO
@@ -51,10 +68,24 @@ IF OBJECT_ID(N'[dbo].[Permissions]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[Roles]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Roles];
+=======
+IF OBJECT_ID(N'[dbo].[Contact]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Contact];
+GO
+IF OBJECT_ID(N'[dbo].[Employee]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Employee];
+GO
+IF OBJECT_ID(N'[dbo].[Permission]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Permission];
+GO
+IF OBJECT_ID(N'[dbo].[Role]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Role];
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
 GO
 IF OBJECT_ID(N'[dbo].[RolePermissions]', 'U') IS NOT NULL
     DROP TABLE [dbo].[RolePermissions];
 GO
+<<<<<<< HEAD
 IF OBJECT_ID(N'[dbo].[Users]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Users];
 GO
@@ -63,6 +94,13 @@ IF OBJECT_ID(N'[dbo].[UserRoles]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[Departments]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Departments];
+=======
+IF OBJECT_ID(N'[dbo].[User]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[User];
+GO
+IF OBJECT_ID(N'[dbo].[UserRole]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[UserRole];
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
 GO
 
 -- --------------------------------------------------
@@ -83,8 +121,12 @@ GO
 CREATE TABLE [dbo].[Employees] (
     [UserID] int  NOT NULL,
     [FirstName] nvarchar(50)  NOT NULL,
+<<<<<<< HEAD
     [LastName] nvarchar(50)  NOT NULL,
     [DeptID] int  NOT NULL
+=======
+    [LastName] nvarchar(50)  NOT NULL
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
 );
 GO
 
@@ -116,8 +158,12 @@ GO
 CREATE TABLE [dbo].[Users] (
     [UserID] int IDENTITY(1,1) NOT NULL,
     [Email] nvarchar(50)  NOT NULL,
+<<<<<<< HEAD
     [Password] nvarchar(50)  NOT NULL,
     [Username] nvarchar(50)  NULL
+=======
+    [Password] nvarchar(50)  NOT NULL
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
 );
 GO
 
@@ -129,6 +175,7 @@ CREATE TABLE [dbo].[UserRoles] (
 );
 GO
 
+<<<<<<< HEAD
 -- Creating table 'Departments'
 CREATE TABLE [dbo].[Departments] (
     [DeptID] int IDENTITY(1,1)  NOT NULL,
@@ -137,6 +184,8 @@ CREATE TABLE [dbo].[Departments] (
 );
 GO
 
+=======
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -183,12 +232,15 @@ ADD CONSTRAINT [PK_UserRoles]
     PRIMARY KEY CLUSTERED ([UserRoleID] ASC);
 GO
 
+<<<<<<< HEAD
 -- Creating primary key on [DeptID] in table 'Departments'
 ALTER TABLE [dbo].[Departments]
 ADD CONSTRAINT [PK_Departments]
     PRIMARY KEY CLUSTERED ([DeptID] ASC);
 GO
 
+=======
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
 -- --------------------------------------------------
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
@@ -262,6 +314,7 @@ ON [dbo].[UserRoles]
     ([UserID]);
 GO
 
+<<<<<<< HEAD
 -- Creating foreign key on [DeptID] in table 'Employees'
 ALTER TABLE [dbo].[Employees]
 ADD CONSTRAINT [FK_Employee_User1]
@@ -277,6 +330,8 @@ ON [dbo].[Employees]
     ([DeptID]);
 GO
 
+=======
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
 -- --------------------------------------------------
 -- Script has ended
 -- --------------------------------------------------

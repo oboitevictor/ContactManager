@@ -1,5 +1,8 @@
 ﻿using Contact.Core.DataAccess;
+<<<<<<< HEAD
 using Contact.Core.Interfaces.IManagers;
+=======
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
 using Contact.Core.Models;
 using System;
 using System.Collections.Generic;
@@ -9,7 +12,11 @@ using System.Threading.Tasks;
 
 namespace Contact.Core.Managers
 {
+<<<<<<< HEAD
     public class RoleManager : IRoleManager
+=======
+    public class RoleManager
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
     {
         private DataRepository _db;
         public RoleManager(DataRepository db)
@@ -32,6 +39,7 @@ namespace Contact.Core.Managers
             }
             catch (Exception ex)
             {
+<<<<<<< HEAD
                 operation.Message = ex.Message;
             }
             return operation;
@@ -185,5 +193,11 @@ namespace Contact.Core.Managers
                 return user.UserRoles == null ? new string[] { } : user.UserRoles.Select(u => u.Role).Select(u => u.Name).ToArray();
             }
         }
+=======
+                operation.Catch(ex);
+            }
+            return operation;
+        }
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
     }
 }

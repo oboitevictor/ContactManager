@@ -22,7 +22,10 @@ namespace Contact.Core.DataAccess
         public int UserID { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+<<<<<<< HEAD
         public string Username { get; set; }
+=======
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
     
         public virtual Employee Employee { get; set; }
         public virtual ICollection<UserRole> UserRoles { get; set; }

@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 ﻿using Contact.Core.Interfaces;
 using System;
+=======
+﻿using System;
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Validation;
@@ -10,6 +14,7 @@ using System.Threading.Tasks;
 
 namespace Contact.Core.DataAccess
 {
+<<<<<<< HEAD
     public class DataRepository:IDataRepository
     {
         private DataEntities _dbContext;
@@ -17,6 +22,17 @@ namespace Contact.Core.DataAccess
         {
             _dbContext = context;
         }
+=======
+    public class DataRepository
+    {
+        private DbContext _dbContext;
+
+        public DataRepository(DbContext context)
+        {
+            _dbContext = context;
+        }
+
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
         public IQueryable<T> Get<T>() where T : class
         {
             return _dbContext.Set<T>();
@@ -59,11 +75,20 @@ namespace Contact.Core.DataAccess
         public IEnumerable<T> Execute<T>(string sprocname, object args)
         {
             var argProperties = args.GetType().GetProperties(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
             //Get SQL Parameters Using Reflection
             var parameters = argProperties.Select(propertyInfo => new System.Data.SqlClient.SqlParameter(
                                 string.Format("@{0}", propertyInfo.Name),
                                 propertyInfo.GetValue(args, new object[] { })))
                             .ToList();
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
             //Build SQL Query to Execute Query using Parameters
             string queryString = string.Format("{0}", sprocname);
             parameters.ForEach(x => queryString = string.Format("{0} {1},", queryString, x.ParameterName));
@@ -87,6 +112,10 @@ namespace Contact.Core.DataAccess
                                 string.Format("@{0}", propertyInfo.Name),
                                 propertyInfo.GetValue(args, new object[] { })))
                             .ToList();
+<<<<<<< HEAD
+=======
+
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
             //Finally Execute Query
             _dbContext.Database.ExecuteSqlCommand(sql, parameters.Cast<object>().ToArray());
         }
@@ -127,11 +156,14 @@ namespace Contact.Core.DataAccess
             return operation;
         }
 
+<<<<<<< HEAD
         public async Task<int> SaveChangesAsync()
         {
          return  await _dbContext.SaveChangesAsync();
         }
 
+=======
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
         public void Dispose()
         {
             if (_dbContext != null)

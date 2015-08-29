@@ -6,6 +6,10 @@ using System.Web.Mvc;
 
 namespace Contact.Web.Controllers
 {
+<<<<<<< HEAD
+=======
+    [Authorize(Roles = "ViewHome")]
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
     public class HomeController : Controller
     {
         public ActionResult Index()

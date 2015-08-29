@@ -1,7 +1,11 @@
 ﻿using Contact.Core.DataAccess;
+<<<<<<< HEAD
 using Contact.Core.Interfaces.IManagers;
 using Contact.Core.Models;
 using Contact.Core.Utility;
+=======
+using Contact.Core.Models;
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,13 +14,21 @@ using System.Threading.Tasks;
 
 namespace Contact.Core.Managers
 {
+<<<<<<< HEAD
     public class UserManager : IUserManager
     {
         private DataRepository _db;
+=======
+    public class UserManager
+    {
+        private DataRepository _db;
+       
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
         public UserManager(DataRepository db)
         {
             _db = db;
         }
+<<<<<<< HEAD
         public Operation Validate(UserModel model)
         {
             var operation = new Operation();
@@ -24,22 +36,45 @@ namespace Contact.Core.Managers
             {
                 var password = new HashingHelper().HashPassword(model.Password);
                 var isValid = _db.Get<User>().Any(u => u.Email == model.UserName && u.Password ==password.ToString());
+=======
+
+
+        public Operation Validate(UserModel model)
+        {
+          
+            var operation = new Operation();
+            try
+            {
+                var isValid = _db.Get<User>().Any(u => u.Email == model.UserName && u.Password == model.Password);
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
                 operation.Status = isValid ? StatusCode.Succeeded : StatusCode.Failed;
                 operation.Message = isValid ? "User is valid" : "Invalid Username or Password";
             }
             catch (Exception ex)
             {
+<<<<<<< HEAD
                 operation.Message = ex.Message;
             }
             return operation;
         }
+=======
+                operation.Catch(ex);
+            }
+            return operation;
+        }
+
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
         public Operation CreateUser(UserModel model)
         {
             var operation = new Operation();
             try
             {
                 //Check to see if the user already exists
+<<<<<<< HEAD
                 var exists = _db.Get<User>().Any(u => u.Email == model.Email||u.Username==model.UserName);
+=======
+                var exists = _db.Get<User>().Any(u => u.Email == model.UserName);
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
                 if (exists)
                 {
                     operation.Status = StatusCode.Failed;
@@ -47,19 +82,32 @@ namespace Contact.Core.Managers
                 }
                 else
                 {
+<<<<<<< HEAD
                     var password = new HashingHelper().HashPassword(model.Password);
+=======
+                 
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
                     //Create user
                     var user = model.Create();
                     user.UserID = user.UserID;
                     user.Email = user.Email;
+<<<<<<< HEAD
                     user.Password = password.ToString();
+=======
+                    user.Password = user.Password;
+                    
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
                     _db.Add(user);
                     _db.SaveChanges();
                 }
             }
             catch (Exception ex)
             {
+<<<<<<< HEAD
                 operation.Message = ex.Message;
+=======
+                operation.Catch(ex);
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
             }
             return operation;
         }
@@ -96,6 +144,7 @@ namespace Contact.Core.Managers
              }
              return operation;
         }
+<<<<<<< HEAD
 
         public Operation EdithUser(int id)
          {
@@ -194,5 +243,8 @@ namespace Contact.Core.Managers
             }
             return operation;
         }
+=======
+      
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
     }
 }

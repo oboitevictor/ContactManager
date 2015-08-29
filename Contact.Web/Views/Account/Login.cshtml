@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 ﻿@model Contact.Web.Models.User
+=======
+﻿@model Contact.Web.Models.UserViewModel
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
 @{
     ViewBag.Title = "Login";
 }
 
+<<<<<<< HEAD
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
         <h3>Login</h3>
@@ -54,3 +59,24 @@
 @section scripts{
     @Scripts.Render("~/bundles/jqueryval")
 }
+=======
+<h2>Login</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+    <p>
+        @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", placeholder = "Enter Username" })
+        @Html.ValidationMessageFor(m => m.UserName)
+    </p>
+    <p>
+        @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Enter Password" })
+    @Html.ValidationMessageFor(m => m.UserName)
+    </p>
+    <p>
+        @Html.CheckBoxFor(m => m.RememberMe) <span>Remember Me</span>
+    </p>
+    <button class="btn btn-default">Login</button>
+}
+
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf

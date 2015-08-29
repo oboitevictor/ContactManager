@@ -12,7 +12,10 @@ namespace Contact.Core.Models
         public int UserID { get; set; }
         public virtual string UserName { get; set; }
         public virtual string Password { get; set; }
+<<<<<<< HEAD
         public virtual string Email { get; set; }
+=======
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
 
         public virtual ICollection<RoleModel> Roles { get; set; }
 
@@ -39,8 +42,12 @@ namespace Contact.Core.Models
             {
                 Password = Password,
                 UserID = UserID,
+<<<<<<< HEAD
                 Email = Email,
                 Username=UserName
+=======
+                Email = UserName,
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
             };
         }
         public void update(User users)

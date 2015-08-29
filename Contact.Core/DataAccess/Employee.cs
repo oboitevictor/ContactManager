@@ -17,6 +17,7 @@ namespace Contact.Core.DataAccess
         public int UserID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+<<<<<<< HEAD
         public int DeptID { get; set; }
         public byte[] IMageData { get; set; }
         public string FileName { get; set; }
@@ -38,5 +39,9 @@ namespace Contact.Core.DataAccess
         public virtual Branch Branch { get; set; }
         public virtual Employee Employees1 { get; set; }
         public virtual Employee Employee1 { get; set; }
+=======
+    
+        public virtual User User { get; set; }
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
     }
 }

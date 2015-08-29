@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿// T4 code generation is enabled for model 'C:\Users\Appzone\Documents\Visual Studio 2013\Projects\Contact\Contact.Core\DataAccess\DataModel.edmx'. 
+=======
+﻿// T4 code generation is enabled for model 'G:\Contact\Contact.Core\DataAccess\DataModel.edmx'. 
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

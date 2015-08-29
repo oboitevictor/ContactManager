@@ -32,10 +32,13 @@ namespace Contact.Core.DataAccess
         public virtual DbSet<RolePermission> RolePermissions { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<UserRole> UserRoles { get; set; }
+<<<<<<< HEAD
         public virtual DbSet<Department> Departments { get; set; }
         public virtual DbSet<Country> Countrys { get; set; }
         public virtual DbSet<State> States { get; set; }
         public virtual DbSet<Branch> Branches { get; set; }
         public virtual DbSet<Customers1> Customers1 { get; set; }
+=======
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
     }
 }

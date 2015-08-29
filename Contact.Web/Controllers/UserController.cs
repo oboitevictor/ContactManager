@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+<<<<<<< HEAD
 using Contact.Core.Models;
 using Contact.Core.Interfaces.IManagers;
 using Contact.Core.DataAccess;
@@ -53,6 +54,38 @@ namespace Contact.Web.Controllers
                 user.Email = query.Email;
             }
             return View(user);
+=======
+
+namespace Contact.Web.Controllers
+{
+    public class UserController : Controller
+    {
+        private UserManager _user;
+        public UserController()
+        {
+
+
+        }
+        public UserController(UserManager user)
+        {
+            //var db = new DataAccess.DataRepository(new DataAccess.DataEntities());
+            _user = user;
+            
+        }
+       
+        //
+        // GET: /User/
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        //
+        // GET: /User/Details/5
+        public ActionResult Details(int id)
+        {
+            return View();
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
         }
 
         [HttpGet]
@@ -65,12 +98,17 @@ namespace Contact.Web.Controllers
         //
         // POST: /User/Create
         [HttpPost]
+<<<<<<< HEAD
         public ActionResult Create(Contact.Web.Models.User model)
+=======
+        public ActionResult Create(UserViewModel Users)
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
         {
             try
             {
                 if (ModelState.IsValid)
                 {
+<<<<<<< HEAD
                     if (model.Email != model.RetypeEmail)
                     {
                         Error("Email are Not Equal");
@@ -79,6 +117,10 @@ namespace Contact.Web.Controllers
                     {
                         _user.CreateUser(model);
                     }
+=======
+                    _user.CreateUser(Users);
+                    
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
                 }
                 // TODO: Add insert logic here
 
@@ -87,21 +129,31 @@ namespace Contact.Web.Controllers
             catch
             {
                 ModelState.AddModelError("oops", "unable to save changes to database try again");
+<<<<<<< HEAD
                 return View(model);
+=======
+                return View(Users);
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
             }
         }
 
         //
         // GET: /User/Edit/5
+<<<<<<< HEAD
         public ActionResult Edit(int? id)
         {
             
             
+=======
+        public ActionResult Edit(int id)
+        {
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
             return View();
         }
 
         //
         // POST: /User/Edit/5
+<<<<<<< HEAD
            [HttpPost]    
         public ActionResult Edit( int id , UserModel model )
         {
@@ -112,12 +164,20 @@ namespace Contact.Web.Controllers
                      _user.updateUser(model);
 
                 }
+=======
+        [HttpPost]
+        public ActionResult Edit(int id, FormCollection collection)
+        {
+            try
+            {
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
                 // TODO: Add update logic here
 
                 return RedirectToAction("Index");
             }
             catch
             {
+<<<<<<< HEAD
                 return View(model);
             }
         }
@@ -126,11 +186,25 @@ namespace Contact.Web.Controllers
         {
             var query = _user.GetUserByID(id);
             return View(query);
+=======
+                return View();
+            }
+        }
+
+        //
+        // GET: /User/Delete/5
+        public ActionResult Delete(int id)
+        {
+
+
+            return View();
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
         }
 
         //
         // POST: /User/Delete/5
         [HttpPost]
+<<<<<<< HEAD
         public ActionResult Delete(int id, UserModel model )
         {
             try
@@ -141,11 +215,19 @@ namespace Contact.Web.Controllers
 
                 }
                 // TODO: Add update logic here
+=======
+        public ActionResult Delete(int id, FormCollection collection)
+        {
+            try
+            {
+                // TODO: Add delete logic here
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
 
                 return RedirectToAction("Index");
             }
             catch
             {
+<<<<<<< HEAD
                 return View(model);
             }
         }
@@ -160,5 +242,10 @@ namespace Contact.Web.Controllers
         //    },
         //    JsonRequestBehavior.AllowGet);
         //}
+=======
+                return View();
+            }
+        }
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
     }
 }

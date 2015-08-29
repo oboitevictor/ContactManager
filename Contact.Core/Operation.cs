@@ -8,6 +8,7 @@ namespace Contact
 {
     public class Operation
     {
+<<<<<<< HEAD
         public virtual string Message { get; set; }
         public StatusCode Status { get; set; }
 
@@ -43,12 +44,25 @@ namespace Contact
                 operation.Message = ex.Message;
             }
             return operation;
+=======
+        public StatusCode Status { get; set; }
+        public string Message { get; set; }
+
+        public Operation Catch(Exception ex)
+        {
+            //Get Innermost Exception
+            while (ex.InnerException != null) ex = ex.InnerException;
+            Message = ex.Message;
+            Status = StatusCode.Failed;
+            return this;
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
         }
     }
 
     public class Operation<T> : Operation
     {
         public T Result { get; set; }
+<<<<<<< HEAD
         public static Operation<T> Create(Func<Operation<T>, T> process)
         {
             var operation = new Operation<T>();
@@ -83,5 +97,9 @@ namespace Contact
             return operation;
         }
     }
+=======
+    }
+
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
     public enum StatusCode { Failed, Succeeded }
 }

@@ -11,8 +11,13 @@ namespace Contact.Core.Models
     {
 
         public int RoleID { get; set; }
+<<<<<<< HEAD
         public virtual string Name { get; set; }
         public virtual string Description { get; set; }
+=======
+        public string Name { get; set; }
+        public string Description { get; set; }
+>>>>>>> 79ef9d25f4e49f2ae4700667da71eb8041f0f4cf
 
         public RoleModel()
         {
