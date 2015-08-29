@@ -1,0 +1,13 @@
+﻿<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+        @if (User.Identity.Name == "admin")
+        {
+            <li class="active"><a href="#">Home</a></li>
+        }
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="@Url.Action("profile", "account", new { area = "" })">@User.Identity.Name</a></li>
+        <li><a href="@Url.Action("logout", "account", new { area = "" })">Logout</a></li>
+    </ul>
+</div><!--/.nav-collapse -->
